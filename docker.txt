@@ -1,0 +1,18 @@
+mvn clean install
+docker build -t tagname .
+docker run -d -p 8080:8080 tagname
+
+mvn clean install 
+mvn clean install -Pdocker
+
+Karaf
+bundle:install mvn:groupId/artifactId/version
+bundle:list
+bundle:start ID
+bundle:stop ID
+
+
+feature:repo-add mvn:groupId/artifactId/version/xml/features 
+feature:install "ten feature"
+feature:list|grep "ten feature"
+la -l|grep "ten bundle"
